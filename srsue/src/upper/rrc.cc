@@ -447,7 +447,6 @@ bool rrc::connection_request(asn1::rrc::establishment_cause_e cause, srslte::byt
       // Send connectionRequest message to lower layers
       //send_con_request(cause); Keep this commented out to capture SIBs and MIBs
       rrc_connection_release();   //Instruct lower levels to release connection
-      state = RRC_STATE_CONNECTED; //Tell the rest of the code that the connection has been successfully setup
 
       // Save dedicatedInfoNAS SDU
       if (this->dedicated_info_nas) {
@@ -460,6 +459,8 @@ bool rrc::connection_request(asn1::rrc::establishment_cause_e cause, srslte::byt
       while (mac_timers->timer_get(t300)->is_running()) {
         usleep(1000);
       }
+
+      state = RRC_STATE_CONNECTED; //Tell the rest of the code that the connection has been successfully setup
 
       if (state == RRC_STATE_CONNECTED) {
         // Received ConnectionSetup
