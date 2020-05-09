@@ -1,7 +1,9 @@
-srsLTE
+CSAI
 ========
 
-[![Build Status](https://travis-ci.org/srsLTE/srsLTE.svg?branch=master)](https://travis-ci.org/srsLTE/srsLTE)
+CSAI is a tool that is built using srsLTE. We modify the RRC.cc file in the srsUE stack to passively listen and record SIBs and paging messages.  In the future we would like to add additional capabilities that allow for more in depth and robust assessments of LTE (and 5G when availible) networks.
+
+---------------
 
 srsLTE is a free and open-source LTE software suite developed by SRS (www.softwareradiosystems.com). 
 
